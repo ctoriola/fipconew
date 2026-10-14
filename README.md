@@ -23,3 +23,5 @@ Dedicated pages: services.html, about.html, presence.html, leadership.html and c
 Interior hero update: Services layers the rig over oversized EXPERTISE lettering; About combines the operating photograph with the rotating environmental emblem; Our Presence uses an illustrative office network; Leadership pairs VISION with three-leader typography; Contact uses a red field and rotating leaf globe. All have coordinated entrance animations and reduced-motion support.
 
 About and Contact hero revision: replaced the leaf emblem with an outlined 01 purpose graphic and an outlined rising arrow with an orbit, respectively. Leadership and Our Presence retain their existing hero designs.
+
+All interface and decorative glyphs (arrows, asterisks, menus, close and expand controls) use inline SVG icons to avoid operating-system emoji substitutions.

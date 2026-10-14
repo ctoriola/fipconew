@@ -1,10 +1,12 @@
+const menuIcon = '<svg class="icon icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"/></svg>';
+const closeIcon = '<svg class="icon icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M5 5l14 14M5 19 19 5"/></svg>';
 document.documentElement.classList.add('js');
 const observer = new IntersectionObserver(entries => { for (const entry of entries) { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } } }, {threshold: .08});
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 const menu = document.querySelector('.menu');
 const navigation = document.querySelector('#navigation');
-function closeMenu() {navigation.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open navigation');menu.textContent='☰';}
-menu.addEventListener('click', () => { const open = navigation.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');menu.textContent=open?'×':'☰'; });
+function closeMenu() {navigation.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open navigation');menu.innerHTML=menuIcon;}
+menu.addEventListener('click', () => { const open = navigation.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');menu.innerHTML=open?closeIcon:menuIcon; });
 navigation.querySelectorAll('a').forEach(a => a.addEventListener('click',closeMenu));
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMenu();}});
 document.querySelectorAll('.service').forEach(service => service.addEventListener('toggle', () => { if (service.open) document.querySelectorAll('.service').forEach(other => {if (other !== service) other.open = false;}); }));

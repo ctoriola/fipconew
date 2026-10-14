@@ -72,3 +72,10 @@ nav a[aria-current="page"]{color:var(--red)}
 .conversation-orbit::after{left:auto;right:-5px;background:#1f1f1f}
 .conversation-sculpture small{text-align:center;color:#ffffffb3;margin-top:-15px}
 @media(max-width:760px){.purpose-sculpture{width:69%;height:42%;right:0;top:27%}.purpose-sculpture>span{font-size:65vw}.purpose-axis{top:55%}.purpose-sculpture small,.conversation-sculpture small{font-size:8px;letter-spacing:.08em}.conversation-sculpture{width:80%;height:42%;top:24%;right:-1%}.conversation-sculpture>span{font-size:78vw}.conversation-orbit{inset:0 0 5%}.conversation-sculpture small{margin-top:0}}
+
+/* SVG icons avoid platform-dependent emoji substitutions (especially on iOS). */
+.icon{display:inline-block;width:1em;height:1em;flex-shrink:0;vertical-align:-.12em;overflow:visible}
+.button b .icon,.scroll .icon,.menu .icon{display:block}
+.ticker .icon{vertical-align:-.12em}
+.conversation-sculpture>span>.icon{display:block;width:1em;height:1em;margin:auto;color:#fff;stroke-width:1.1}
+.service .plus .icon,.faq summary b .icon{display:block}
